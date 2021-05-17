@@ -14,9 +14,10 @@ app.post("/signin",(req,res)=>{
     const payload = {
         name:req.body.name,
         email:req.body.email,
-        googleId:req.body.googleId
+        googleId:req.body.googleId,
+        channelName:req.body.channelName,
+        profilePictureUrl:req.body.profilePictureUrl
     }
-    console.log(req.body)
     User.create(payload).then((res=>{
         res.send('inserted new user to the database')
     })).catch(err=>{
